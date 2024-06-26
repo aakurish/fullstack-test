@@ -1,0 +1,548 @@
+
+/* GLOBAL
+^^^^^^^^^^^^ */
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+body {
+    height: 100%;
+    color: #4c5356;
+    background: #fff;
+    font: 16px/1.5 "VWAG TheSans", Arial, Tahoma, Geneva, sans-serif;
+    overflow-y: scroll;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+sup {
+    line-height: 0;
+}
+a {
+    text-decoration: none;
+    color: #335f7d;
+    text-decoration-skip-ink: none;
+}
+a:not(.btn):hover {
+    text-decoration: underline;
+}
+
+input,
+textarea,
+select,
+button {
+    vertical-align: middle;
+    font: 100% "VWAG TheSans", Arial, Tahoma, Geneva, sans-serif;
+}
+button * {
+    position: relative;
+}
+form,
+fieldset {
+    border-style: none;
+}
+form > *:last-child,
+fieldset > *:last-child {
+    margin-bottom: 0 !important;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+#main {
+    overflow: hidden;
+    min-width: 320px;
+    position: relative;
+    z-index: 100;
+    min-height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-size: 1.6rem;
+}
+h1 {
+    font: 5.4rem/1 "Times New Roman", Times, Baskerville,
+        Georgia, serif;
+    margin: 0 0 3rem;
+    color: #335f7d;
+}
+h2 {
+    font: 4rem/1  "Times New Roman", Times, Baskerville,
+        Georgia, serif;
+    margin: 0 0 3rem;
+    color: #335f7d;
+}
+h3 {
+    font: 3rem/1 "Times New Roman", Times, Baskerville,
+        Georgia, serif;
+    margin: 0 0 3rem;
+    color: #335f7d;
+}
+h4 {
+    font: 2.2rem/1.3 "VWAG TheAntiqua", "Times New Roman", Times, Baskerville,
+        Georgia, serif;
+    margin: 0 0 1.4rem;
+    color: #335f7d;
+}
+h5 {
+    font: 1.8rem/1.3 "VWAG TheAntiqua", "Times New Roman", Times, Baskerville,
+        Georgia, serif;
+    margin: 0 0 3rem;
+    color: #335f7d;
+}
+.btn {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 0.1rem solid #004666;
+    background: #004666;
+    font: 1.8rem/1.15 inherit inherit;
+    min-height: 4rem;
+
+    padding: 0.8rem 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn.btn-border {
+    background: none;
+    border-color: #335f7d;
+    color: #335f7d;
+}
+.btn.btn-border.btn-red,
+.cancelBtn {
+    background: none;
+    border-color: #a21e4d;
+    color: #a21e4d;
+}
+.btn.btn-border.btn-red:hover {
+    background: #a21e4d;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #8dbfcf;
+    border-color: #8dbfcf;
+    color: #fff;
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn.disabled {
+    color: #fff !important;
+    background: #d3d6d9 !important;
+    border-color: #d3d6d9 !important;
+    cursor: default;
+}
+
+
+p {
+    margin: 0 0 2rem;
+}
+ul {
+    list-style: disc;
+    margin: -1.5rem 0 2rem 18px;
+}
+ul li {
+    padding: 1.5rem 0 0;
+}
+ul ul {
+    margin-top: 0;
+}
+ul ul ul {
+    font-size: 1.2rem;
+}
+ol {
+    margin: 0 0 2rem;
+    counter-reset: section;
+    list-style-type: none;
+}
+ol li::before {
+    counter-increment: section;
+    content: counters(section, ".") " ";
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin: 0 0 3rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+/* HEADER
+------------*/
+#header {
+    padding: 0 1.5rem;
+    background: #fff;
+}
+
+label {
+    display: block;
+    margin: 0 0 0.4rem;
+    color: #7f8789;
+}
+
+
+
+
+/* тест плайсхолдер  с фокусом */
+.tx:focus::-webkit-input-placeholder {
+    opacity: 1;
+    color: transparent;
+    font-weight: normal;
+}
+.tx:focus:-moz-placeholder {
+    opacity: 1;
+    color: transparent;
+    font-weight: normal;
+}
+.tx:focus::-moz-placeholder {
+    opacity: 1;
+    color: transparent;
+    font-weight: normal;
+}
+.tx:focus:-ms-input-placeholder {
+    opacity: 1;
+    color: transparent;
+    font-weight: normal;
+}
+
+
+.tx:disabled {
+    background: #eff0f1;
+    border-color: #eff0f1;
+    color: #34393b;
+}
+
+
+.tx {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    border: 0;
+    border-bottom: 1px solid #8dbfcf;
+    background: none;
+    color: #335f7d;
+}
+.tx:focus {
+    /*font-weight: bold;*/
+    border-bottom: 1px solid #335f7d;
+    color: #335f7d;
+}
+.tx::-webkit-input-placeholder {
+    opacity: 1;
+    color: #a8adb3;
+    font-weight: normal;
+}
+.tx:-moz-placeholder {
+    opacity: 1;
+    color: #a8adb3;
+    font-weight: normal;
+}
+.tx::-moz-placeholder {
+    opacity: 1;
+    color: #a8adb3;
+    font-weight: normal;
+}
+.tx:-ms-input-placeholder {
+    opacity: 1;
+    color: #a8adb3;
+    font-weight: normal;
+}
+.tx:disabled {
+    color: #a8adb3;
+    border-bottom-color: #d3d6d9;
+}
+
+textarea.tx {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 4rem;
+}
+
+/* CONTENT
+------------*/
+.content {
+    padding: 0 1.5rem 4rem;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+.content-box {
+    max-width: 117.6rem;
+    margin: 8rem auto 0 auto ;
+}
+
+
+.top-bg {
+    height: 9.8rem;
+    margin: 0 -1.5rem;
+    background: #c6dfe7;
+}
+
+
+#header a:hover {
+    text-decoration: none;
+}
+
+.table-styled th {
+    position: relative;
+    text-align: left;
+    padding: 0 2rem 0.6rem 0;
+}
+.table-styled th::after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 2rem;
+    height: 0.2rem;
+    background: #d3d6d9;
+}
+.table-styled th:last-child {
+    padding-right: 0;
+}
+.table-styled th:last-child::after {
+    right: 0;
+}
+.table-styled th.active:after {
+    height: 0.4rem;
+    background: #8dbfcf;
+}
+.table-styled td {
+    position: relative;
+    height: 5.9rem;
+    padding: 0.5rem 2rem 0.5rem 0;
+}
+.table-styled td::after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 2rem;
+    height: 0.1rem;
+    background: #d3d6d9;
+}
+.table-styled td:last-child {
+    padding-right: 0;
+}
+.table-styled td:last-child::after {
+    right: 0;
+}
+.table-styled td.active::after {
+    background: #8dbfcf;
+}
+.table-styled td .table-name {
+    color: #004666;
+}
+
+.paging-box {
+    margin-top: -2rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+.paging-box > div {
+    padding-top: 2rem;
+}
+.paging {
+    list-style: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: -1rem -0.5rem 0;
+}
+.paging li {
+    padding: 1rem 0.5rem 0;
+}
+.paging li a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 4rem;
+    min-width: 4rem;
+    border: 0.1rem solid #d3d6d9;
+    padding: 0 0.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #335f7d;
+    text-decoration: none;
+}
+.paging li a:hover {
+    border-color: #8dbfcf;
+    background: #8dbfcf;
+    color: #fff;
+}
+.paging li a.paging-arrow {
+    font-size: 2.4rem;
+    color: #7f8789;
+}
+.paging li a.paging-arrow:hover {
+    color: #fff;
+}
+.paging li span {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 4rem;
+    min-width: 4rem;
+    border: 0.1rem solid #eff0f1;
+    background: #eff0f1;
+    padding: 0 0.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #7f8789;
+    text-decoration: none;
+}
+
+.color-box {
+    background: #eef5f8;
+    padding: 4.8rem 4.5rem 3rem;
+}
+
+
+/* FOOTER
+-----------*/
+#footer {
+    background: #eff0f1;
+    padding: 0 1.5rem;
+    color: #a8adb3;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+.footer-box {
+    max-width: 117.6rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+.footer-data {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: -1rem;
+    text-align: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.footer-data > div {
+    padding-top: 1rem;
+}
+
+
+.pagination-status {
+    color: #7f8789;
+}
+.pagination-status .marker-number {
+    color: #4c5356;
+    font-weight: bold;
+}
+
+.narrow.history_n td {
+    height: 5.5rem;
+}
+.table-styled.applicant-report-table th {
+    font-size: 12px;
+    padding: 0 1rem 0.6rem 0;
+}
+.fs-20 {
+    font-size: 20px;
+}
+
+.status-auth-second-color {
+    color: #7f8789;
+    font-weight: normal;
+}
+
+
+
+.comment-textarea{
+    background-color: #EEF5F8;
+    width: 100%;
+    padding:10px;
+    border:1px solid #C6DFE7;
+}
+
+.prototype{
+    display: none;
+}
+
+label.error {
+    color:red;
+}
